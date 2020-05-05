@@ -5,7 +5,7 @@
       :background-color="backgroundColor(index)"
       :key="index"
       :acai="acaiSize"
-      :isSelected="isSelected(acaiSize)"
+      :class="isSelected(acaiSize)"
       @handle-choose="handleChoose"
     />
   </div>
@@ -101,7 +101,7 @@ export default {
     },
 
     isSelected(acai) {
-      return this.selectedSize === acai
+      return { 'card-selected': this.selectedSize === acai }
     }
   }
 }
@@ -112,5 +112,9 @@ export default {
   display: flex;
   flex-wrap: wrap;
   padding: 1em;
+}
+
+.card-selected {
+  outline: 4px dashed #8338ec;
 }
 </style>

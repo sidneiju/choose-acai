@@ -1,17 +1,14 @@
 <template>
-  <div class="choose-base">
-    <div class="card" :style="{ backgroundColor }" @click="handleChoose">
-      <img
-        src="../../assets/acai_bowl.svg"
-        alt="acai_pote"
-        :width="acaiBowlSize"
-        :height="acaiBowlSize"
-      />
-      <span class="text">{{ text }}</span>
-      <span class="small-text">Preço: {{ acai.price | toCurrency }}</span>
-      <span class="small-text">Tempo de preparo: {{ acai.time }} minutos</span>
-    </div>
-    <span v-if="isSelected">Escolhido!</span>
+  <div class="card" :style="{ backgroundColor }" @click="handleChoose">
+    <img
+      src="../../assets/acai_bowl.svg"
+      alt="acai_pote"
+      :width="acaiBowlSize"
+      :height="acaiBowlSize"
+    />
+    <span class="text">{{ text }}</span>
+    <span class="small-text">Preço: {{ acai.price | toCurrency }}</span>
+    <span class="small-text">Tempo de preparo: {{ acai.time }} minutos</span>
   </div>
 </template>
 
@@ -21,8 +18,7 @@ export default {
 
   props: {
     backgroundColor: String,
-    acai: Object,
-    isSelected: Boolean
+    acai: Object
   },
 
   computed: {
@@ -43,12 +39,6 @@ export default {
 </script>
 
 <style scoped>
-.choose-base {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
 .card {
   margin: 1em;
   padding: 1em;
@@ -60,7 +50,7 @@ export default {
   cursor: pointer;
   color: #080708;
   border-radius: 4px;
-  transition: opacity 0.5s;
+  transition: opacity 0.2s;
 }
 
 .text {
@@ -74,6 +64,6 @@ export default {
 }
 
 .card:hover {
-  opacity: 0.6;
+  opacity: 0.8;
 }
 </style>

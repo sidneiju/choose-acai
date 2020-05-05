@@ -171,14 +171,15 @@ body {
   text-align: center;
   color: #2c3e50;
   height: 100vh;
+  width: 100vw;
   background-color: #f4f4f4;
-  display: flex;
-  flex-direction: column;
 }
 
 .button-next {
-  margin-right: 3em;
-  padding: 3em;
+  /* outline: 2px solid #8338ec; */
+  margin: 2em;
+  padding: 2em;
+  box-shadow: none;
   align-self: flex-end;
 }
 </style>

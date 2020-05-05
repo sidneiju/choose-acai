@@ -4,21 +4,21 @@
       background-color="#F18BBB"
       image="strawberry.svg"
       :flavor="strawberry"
-      :isSelected="isSelected(strawberry)"
+      :class="isSelected(strawberry)"
       @handle-choose="handleChoose"
     />
     <ChooseFlavorCard
       image="banana.svg"
       background-color="#FFD429"
       :flavor="banana"
-      :isSelected="isSelected(banana)"
+      :class="isSelected(banana)"
       @handle-choose="handleChoose"
     />
     <ChooseFlavorCard
       background-color="#BFD159"
       image="kiwi.svg"
       :flavor="kiwi"
-      :isSelected="isSelected(kiwi)"
+      :class="isSelected(kiwi)"
       @handle-choose="handleChoose"
     />
   </div>
@@ -71,7 +71,7 @@ export default {
     },
 
     isSelected(flavor) {
-      return this.selectedFlavor === flavor
+      return { 'card-selected': this.selectedFlavor === flavor }
     }
   }
 }
@@ -82,5 +82,9 @@ export default {
   display: flex;
   flex-wrap: wrap;
   padding: 1em;
+}
+
+.card-selected {
+  outline: 4px dashed #8338ec;
 }
 </style>

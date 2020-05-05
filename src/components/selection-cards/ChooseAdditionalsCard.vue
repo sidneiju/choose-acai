@@ -1,21 +1,18 @@
 <template>
-  <div class="choose-base">
-    <div class="card" :style="{ backgroundColor }" @click="handleChoose">
-      <img
-        :src="require('../../assets/' + image)"
-        :alt="additional.text"
-        width="125em"
-        height="125em"
-      />
-      <span class="text">{{ additional.text }}</span>
-      <span class="small-text" v-if="additional.price !== 0"
-        >Preço adicional: {{ additional.price | toCurrency }}</span
-      >
-      <span class="small-text" v-if="additional.time !== 0"
-        >Tempo adicional: {{ additional.time }} minutos</span
-      >
-    </div>
-    <span v-if="isSelected">Escolhido!</span>
+  <div class="card" :style="{ backgroundColor }" @click="handleChoose">
+    <img
+      :src="require('../../assets/' + image)"
+      :alt="additional.text"
+      width="125em"
+      height="125em"
+    />
+    <span class="text">{{ additional.text }}</span>
+    <span class="small-text" v-if="additional.price !== 0"
+      >Preço adicional: {{ additional.price | toCurrency }}</span
+    >
+    <span class="small-text" v-if="additional.time !== 0"
+      >Tempo adicional: {{ additional.time }} minutos</span
+    >
   </div>
 </template>
 
@@ -25,8 +22,7 @@ export default {
   props: {
     backgroundColor: String,
     image: String,
-    additional: Object,
-    isSelected: Boolean
+    additional: Object
   },
 
   methods: {
@@ -39,12 +35,6 @@ export default {
 </script>
 
 <style scoped>
-.choose-base {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
 .card {
   margin: 1em;
   padding: 1em;
@@ -56,7 +46,7 @@ export default {
   cursor: pointer;
   color: #080708;
   border-radius: 4px;
-  transition: opacity 0.5s;
+  transition: opacity 0.2s;
 }
 
 .text {
@@ -70,6 +60,6 @@ export default {
 }
 
 .card:hover {
-  opacity: 0.6;
+  opacity: 0.8;
 }
 </style>

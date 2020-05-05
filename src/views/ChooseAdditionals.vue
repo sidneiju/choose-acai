@@ -4,21 +4,21 @@
       background-color="#D4B5D9"
       image="granola.png"
       :additional="granola"
-      :isSelected="isSelected(granola)"
+      :class="isSelected(granola)"
       @handle-choose="handleChoose"
     />
     <ChooseAdditionalsCard
       image="pacoca.png"
       background-color="#EAA982"
       :additional="pacoca"
-      :isSelected="isSelected(pacoca)"
+      :class="isSelected(pacoca)"
       @handle-choose="handleChoose"
     />
     <ChooseAdditionalsCard
       background-color="#84D4CB"
       image="milk_powder.png"
       :additional="milkPowder"
-      :isSelected="isSelected(milkPowder)"
+      :class="isSelected(milkPowder)"
       @handle-choose="handleChoose"
     />
   </div>
@@ -80,7 +80,7 @@ export default {
     },
 
     isSelected(additional) {
-      return additional.selected
+      return { 'card-selected': this.selectedAdd.includes(additional) }
     }
   }
 }
@@ -91,5 +91,9 @@ export default {
   display: flex;
   flex-wrap: wrap;
   padding: 1em;
+}
+
+.card-selected {
+  outline: 4px dashed #8338ec;
 }
 </style>
