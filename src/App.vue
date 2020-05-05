@@ -90,6 +90,7 @@ export default {
       if (!this.isLastStep()) {
         this.updateCurrentStep(index + 1)
       } else {
+        alert('Pedido feito!')
         /* API
          * Envia o pedido com as informações necessárias para a Api
         Api.post('ordered', this.order)
